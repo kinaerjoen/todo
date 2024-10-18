@@ -1,0 +1,57 @@
+<!-- 1.1 Создать базовую разметку с укаказнием тегов и кратким описанием каждого -->
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Список дел" />
+    <!-- 2.1 Добавить стили -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- 3.1 Добавить скрипт -->
+    <script defer src="./index.js"></script>
+    <title>Список задач</title>
+  </head>
+  <body>
+    <!-- 1.2 Добавить контент для листа - поле для ввода задачи и сам список -->
+    <main class="todo">
+      <form name="task-form" class="todo__form form">
+        <label class="form__label" for="form-input"
+          >Введите новую задачу:</label
+        >
+        <input
+          type="text"
+          placeholder="Введите текст задачи"
+          required
+          aria-required="true"
+          name="task"
+          class="form__input"
+          id="form-input"
+        />
+        <button class="form__button form__button_add">Добавить</button>
+      </form>
+
+      <label for="filter" class="showFilters">Показать фильтры</label>
+
+      <form name="filterBox" class="filterBox">
+        <label for="searchTask" class="filter-label">Поиск по названию:</label>
+        <label for="status" class="filter-label">Фильтры по критериям:</label>
+        <label for="date" class="filter-label">Сортировка по дате:</label>
+        <input type="text" id="searchTask" class="searchTask" placeholder="Введите название задачи"/>
+        <div class="status" id="status">
+          <label><input type="radio" name="filter" class="radiobutton" id="allTasks" value="all" checked>Все</label>
+          <label><input type="radio" name="filter" class="radiobutton" id="important" value="important">Важные</label>
+          <label><input type="radio" name="filter" class="radiobutton" id="completed" value="completed">Выполненные</label>
+          <label><input type="radio" name="filter" class="radiobutton" id="notCompleted" value="notCompleted">Невыполненные</label>
+        </div>
+        <select class="date" id="date">
+          <option value="oldest">Сначала старые</option>
+          <option value="newest">Сначала новые</option>
+        </select>
+      </form>  
+
+
+
+      <ul class="todo__list list"></ul>
+    </main>
+  </body>
+</html>
