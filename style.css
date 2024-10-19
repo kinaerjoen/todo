@@ -259,4 +259,6 @@
     display: none;
   }
   
-  
+  .showFilters:hover {
+    text-decoration: underline;
+  }

@@ -130,6 +130,7 @@ class ToDo {
     listItem.append(textSpan, importantButton, completeButton, deleteButton, creationDate);
     this.list.appendChild(listItem);
     dateSort();
+    filterTasks();
   }
 
   #createButton(buttonClass, buttonText) {
@@ -147,7 +148,7 @@ new ToDo(document.querySelector(".todo"));
 
 
 document.querySelector(".showFilters").addEventListener("click", function () {
-  if (document.querySelector(".filterBox").style.display === "none") {
+  if (window.getComputedStyle(document.querySelector(".filterBox")).display === "none") {
     document.querySelector(".filterBox").style.display = "grid";
     document.querySelector(".showFilters").textContent = "Скрыть фильтры";
   } else {
